@@ -1,26 +1,21 @@
 import React from 'react';
-import logo from './logo.svg';
-import './App.css';
+import { withStyles } from '@material-ui/core/styles';
 
-function App() {
-  return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
-    </div>
-  );
-}
+import SearchResults from './components/SearchResults/SearchResults';
 
-export default App;
+const styles = () => ({
+  app: {
+    maxWidth: '80%',
+    margin: '100px auto 0 auto',
+  },
+});
+
+const App = ({
+  classes,
+}) => (
+  <div className={classes.app}>
+    <SearchResults />
+  </div>
+);
+
+export default withStyles(styles)(App);
